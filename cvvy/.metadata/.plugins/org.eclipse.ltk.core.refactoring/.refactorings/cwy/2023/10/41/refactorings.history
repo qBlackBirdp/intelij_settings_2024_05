@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;cwy&apos;&#x0A;- Original project: &apos;cwy&apos;&#x0A;- Original element: &apos;cwy/src/com.KoreaIT.java.BAM&apos;&#x0A;- Delete subpackages" description="Delete element" element1="/src&lt;com.KoreaIT.java.BAM.util" element2="/src&lt;com.KoreaIT.java.BAM.dto" element3="/src&lt;com.KoreaIT.java.BAM" element4="/src&lt;com.KoreaIT.java" element5="/src&lt;com.KoreaIT" element6="/src&lt;com" elements="6" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1697169585805" subPackages="true" version="1.0"/>
+</session>

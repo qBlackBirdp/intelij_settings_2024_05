@@ -1,0 +1,73 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Article {
+    private String title;
+    private String content;
+
+    public Article(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+}
+
+public class ArticleManager {
+    private static List<Article> articles = new ArrayList<>();
+    private static int articleCount = 0;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("==프로그램 시작==");
+
+        while (true) {
+            System.out.print("명령어) ");
+            String command = scanner.nextLine();
+
+            if (command.equals("article list")) {
+                listArticles();
+            } else if (command.equals("article write")) {
+                writeArticle(scanner);
+            } else if (command.equals("exit")) {
+                break;
+            } else {
+                System.out.println("존재하지 않는 명령어 입니다.");
+            }
+        }
+
+        System.out.println("==프로그램 종료==");
+    }
+
+    private static void listArticles() {
+        if (articles.isEmpty()) {
+            System.out.println("게시글이 없습니다");
+        } else {
+            for (int i = 0; i < articles.size(); i++) {
+                Article article = articles.get(i);
+                System.out.println((i + 1) + "번글 - 제목: " + article.getTitle() + ", 내용: " + article.getContent());
+            }
+        }
+    }
+
+    private static void writeArticle(Scanner scanner) {
+        System.out.print("제목: ");
+        String title = scanner.nextLine();
+        System.out.print("내용: ");
+        String content = scanner.nextLine();
+
+        Article article = new Article(title, content);
+        articles.add(article);
+
+        articleCount++;
+        System.out.println(articleCount + "번글이 생성되었습니다");
+    }
+}
